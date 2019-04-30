@@ -53,15 +53,16 @@ try {
 -- Date et heure : ' . date('d/m/Y à H:i:s') . '
 -- Base de données : `' . $MYSQLdb . '`
 --
-SET FOREIGN_KEY_CHECKS=0;
+SET Stranger_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT=0;
 START TRANSACTION;
 ';
+echo "petit loulou";
   // On boucle sur l’ensemble des tables à sauvegarder
   foreach ($tables as $table) {
     // On ajoute une instruction pour supprimer la table si elle existe déjà
-    $return .= "DROP TABLE IF EXISTS `$table`;\n";
+    $returne .= "DROP TABLE IF EXISTS `$table`;\n";
     // On génère ensuite la structure de la table
     $result = $conn->query("SHOW CREATE TABLE `$table`")->fetch(PDO::FETCH_ASSOC);
     $return .= $result['Create Table'] . ";\n\n";
